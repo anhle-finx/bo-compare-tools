@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/bo-compare-tools/sw.js', { scope: '/bo-compare-tools/' })})}
