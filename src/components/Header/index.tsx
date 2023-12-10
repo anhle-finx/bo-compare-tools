@@ -25,7 +25,7 @@ export default function Header(props: HeaderProps) {
             style={{ marginRight: 14 }}
           />
           <Text aria-label="Page Title" color="inherit" hideIn="xs">
-            nFlow Compare Tools
+            BO Compare Tools
           </Text>
         </Navbar.Brand>
         <Navbar.Content>
