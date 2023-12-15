@@ -13,14 +13,14 @@ export default function FilterOptions(props: any) {
   return (
     <Navbar isCompact isBordered variant="static">
       <Navbar.Content css={styles.bar}>
-        <div style={styles.switch}>
+        {/* <div style={styles.switch}>
           <Switch
             size="md"
             checked={isIgnoreDep}
             onChange={changeIsIgnoreDep}
           />
           <Text style={{ marginLeft: 10 }}>{`Ignore [DEPRECATED]`}</Text>
-        </div>
+        </div> */}
 
         <div style={styles.switch}>
           <Switch

@@ -56,6 +56,48 @@ export default function ConfigsCompare(props: Props) {
     }
   }, [fileDataLeft, fileDataRight]);
 
+  const handleIsUpdateOnly = () => {
+    const left = rawDataLeft;
+    const right = rawDataRight;
+    const groupDataUAT = groupData(right);
+    setGroupDataRight(groupDataUAT);
+
+    if (!isUpdateOnly) {
+      const dataFinal = compareData(left, right).filter((p) => p.isUpdate);
+      const groupDataDEV = groupData(dataFinal);
+      setGroupDataLeft(groupDataDEV);
+
+      setIsNewOnly(false);
+    } else {
+      const dataFinal = compareData(left, right);
+      const groupDataDEV = groupData(dataFinal);
+      setGroupDataLeft(groupDataDEV);
+    }
+
+    setIsUpdateOnly(!isUpdateOnly);
+  };
+
+  const handleIsNewOnly = () => {
+    const left = rawDataLeft;
+    const right = rawDataRight;
+    const groupDataUAT = groupData(right);
+    setGroupDataRight(groupDataUAT);
+
+    if (!isNewOnly) {
+      const dataFinal = compareData(left, right).filter((p) => p.isNew);
+      const groupDataDEV = groupData(dataFinal);
+      setGroupDataLeft(groupDataDEV);
+
+      setIsUpdateOnly(false);
+    } else {
+      const dataFinal = compareData(left, right);
+      const groupDataDEV = groupData(dataFinal);
+      setGroupDataLeft(groupDataDEV);
+    }
+
+    setIsNewOnly(!isNewOnly);
+  };
+
   const handleFileRead1 = () => {
     const content = reader.result;
     setFileDataLeft(content);
@@ -130,9 +172,9 @@ export default function ConfigsCompare(props: Props) {
           isIgnoreDep={isIgnoreDep}
           changeIsIgnoreDep={() => setIsIgnoreDep(!isIgnoreDep)}
           isUpdateOnly={isUpdateOnly}
-          changeIsUpdateOnly={() => setIsUpdateOnly(!isUpdateOnly)}
+          changeIsUpdateOnly={() => handleIsUpdateOnly()}
           isNewOnly={isNewOnly}
-          changeIsNewOnly={() => setIsNewOnly(!isNewOnly)}
+          changeIsNewOnly={() => handleIsNewOnly()}
         />
       </div>
       <div style={styles.content}>

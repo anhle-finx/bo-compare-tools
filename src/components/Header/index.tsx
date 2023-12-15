@@ -29,14 +29,23 @@ export default function Header(props: HeaderProps) {
           </Text>
         </Navbar.Brand>
         <Navbar.Content>
-          <Switch
-            iconOn={<PiMoon aria-label="Dark Mode Icon" />}
-            iconOff={<PiSunBold aria-label="Light Mode Icon" />}
-            size="md"
-            aria-label="Dark Mode Switch"
-            checked={darkMode.value}
-            onChange={darkMode.toggle}
-          />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+            }}
+          >
+            <Text>v1.0.0</Text>
+            <Switch
+              iconOn={<PiMoon aria-label="Dark Mode Icon" />}
+              iconOff={<PiSunBold aria-label="Light Mode Icon" />}
+              size="md"
+              aria-label="Dark Mode Switch"
+              checked={darkMode.value}
+              onChange={darkMode.toggle}
+            />
+          </div>
         </Navbar.Content>
       </Navbar>
     </Layout>
