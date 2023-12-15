@@ -22,7 +22,7 @@ async function processData(fileText: any) {
   const rawData = [];
   const data = fileText.split('\n');
 
-  let lastType = '';
+  let lastType: any = '';
   for (let index = 0; index < data.length; index++) {
     const item = data[index];
 
@@ -39,7 +39,7 @@ async function processData(fileText: any) {
         rawData.push({
           key: jsonItem.name,
           value: jsonItem,
-          type: lastType?.replaceAll('"', ''),
+          type: lastType.replaceAll('"', ''),
           title: `${displayName} (${jsonItem.name})`,
         });
       } catch (error) {
