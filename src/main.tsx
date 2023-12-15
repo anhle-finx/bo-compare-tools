@@ -1,8 +1,8 @@
+import { NextUIProvider, createTheme } from '@nextui-org/react';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
-import { NextUIProvider, createTheme } from '@nextui-org/react';
 import useDarkMode from 'use-dark-mode';
+import App from './App.tsx';
 import ErrorBoundary from './components/ErrorBoundary/index.tsx';
 import ErrorComponent from './components/ErrorComponent/index.tsx';
 import './index.css';
@@ -16,7 +16,7 @@ function Main() {
     type: 'dark',
   });
 
-  const darkMode = useDarkMode(true);
+  const darkMode = useDarkMode(false);
 
   return (
     <NextUIProvider theme={darkMode.value ? darkTheme : lightTheme}>

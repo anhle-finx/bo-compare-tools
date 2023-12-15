@@ -2,7 +2,7 @@
 
 ## DEV SETUP
 
-- `pnpm install`
-- `pnpm run dev` - For local run
-- `pnpm run build` - For production build
-- `pnpm run build && pnpm run deploy` - For Deployment
+- `yarn install`
+- `yarn dev` - For local run
+- `yarn build` - For production build
+- `yarn build && yarn deploy` - For Deployment

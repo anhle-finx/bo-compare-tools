@@ -1,9 +1,9 @@
 import { lazy, Suspense, LazyExoticComponent } from 'react';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
-import Loading from './pages/Loading';
-import Header from './components/Header';
 import { Outlet } from 'react-router-dom';
 import { Grid } from '@nextui-org/react';
+import Loading from './pages/Loading';
+import Header from './components/Header';
 
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Compare = lazy(() => import('./pages/Compare'));
