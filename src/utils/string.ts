@@ -33,14 +33,14 @@ async function processData(fileText: any) {
       try {
         const jsonItem = JSON.parse(item);
         const displayName =
-          jsonItem?.displayName ||
-          `[${jsonItem?.type}] - ${jsonItem?.template?.displayName}`;
+          jsonItem?.data?.displayName ||
+          `[${jsonItem?.entityType}] - ${jsonItem?.data?.displayName || ''}`;
 
         rawData.push({
-          key: jsonItem.name,
+          key: jsonItem?.data?.name,
           value: jsonItem,
-          type: lastType.replaceAll('"', ''),
-          title: `${displayName} (${jsonItem.name})`,
+          type: jsonItem?.entityType, //lastType.replaceAll('"', ""),
+          title: `${displayName} (${jsonItem?.data?.name})`,
         });
       } catch (error) {
         console.log('🚀 ~ processData ~ error:', error);
