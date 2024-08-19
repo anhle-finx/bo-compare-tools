@@ -2,7 +2,7 @@ import { Text } from '@nextui-org/react';
 
 function LineItem({ data, onViewDetails }: any) {
   const { title, isNew, isUpdate, key } = data || {};
-
+ 
   return (
     <div
       style={
@@ -15,7 +15,7 @@ function LineItem({ data, onViewDetails }: any) {
       key={key}
       onClick={() => onViewDetails(key)}
     >
-      <Text style={{ fontWeight: 'bold' }}>{title}</Text>
+      <Text style={{ fontWeight: 'bold', color: '#333' }}>{title}</Text>
     </div>
   );
 }
@@ -23,6 +23,7 @@ function LineItem({ data, onViewDetails }: any) {
 const styles = {
   collapsible: {
     backgroundColor: '#DAD7CD',
+    color: 'black',
     marginBottom: 15,
     border: '1px #000 solid',
     borderRadius: 5,
